@@ -14,7 +14,6 @@ jobs:
         fetch-depth: 0
     - name: Deploy to Aptible
       uses: aptible/aptible-deploy-action@v4
-      run: aptible deploy --app aptible --git-commitish=main
       with:
         type: git
         app: tera
