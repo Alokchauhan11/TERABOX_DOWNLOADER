@@ -14,9 +14,5 @@ jobs:
         fetch-depth: 0
     - name: Deploy to Aptible
       run: aptible deploy --app aptible --git-commitish=main
-      with:
-        type: git
-        app: tera
-        environment: moonstot_12
-        username: ${{ secrets.APTIBLE_USERNAME }}
-        password: ${{ secrets.APTIBLE_PASSWORD }}
+      env:
+         APTIBLE_DEPLOY_TOKEN: $ {{ secrets.APTIBLE_DEPLOY_TOKEN }}
